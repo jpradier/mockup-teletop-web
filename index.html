@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opérateur Mobile - TéléTop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #0078d4;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #005ea3;
+        }
+        nav a {
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #00457c;
+        }
+        .content {
+            padding: 2em;
+        }
+        .section {
+            margin-bottom: 2em;
+        }
+        h2 {
+            color: #0078d4;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bienvenue chez TéléTop - Votre opérateur mobile de confiance</h1>
+</header>
+
+<nav>
+    <a href="#forfaits">Forfaits</a>
+    <a href="#telephones">Téléphones</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="content">
+    <section id="forfaits" class="section">
+        <h2>Nos forfaits</h2>
+        <p>Découvrez nos forfaits sans-engagement adaptés à tous vos besoins :</p>
+        <ul>
+            <li><strong>Forfait Essentiel</strong> : 10€/mois - 2 Go de data, appels et SMS illimités</li>
+            <li><strong>Forfait Confort</strong> : 20€/mois - 20 Go de data, appels et SMS illimités</li>
+            <li><strong>Forfait Premium</strong> : 30€/mois - 50 Go de data, appels et SMS illimités, roaming international</li>
+        </ul>
+    </section>
+
+    <section id="telephones" class="section">
+        <h2>Nos téléphones</h2>
+        <p>Choisissez parmi une large gamme de téléphones compatibles avec nos forfaits :</p>
+        <ul>
+            <li><strong>Smartphone Alpha</strong> - 199€</li>
+            <li><strong>Smartphone Beta</strong> - 299€</li>
+            <li><strong>Smartphone Gamma</strong> - 399€</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contactez-nous</h2>
+        <p>Pour toute question, contactez notre service client :</p>
+        <ul>
+            <li>Téléphone : 01 23 45 67 89</li>
+            <li>Email : support@teletop.fr</li>
+            <li>Adresse : 123 Rue de la Téléphonie, Paris, France</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 TéléTop - Tous droits réservés</p>
+</footer>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const integrationID = urlParams.get('integrationID') || "dc4187c7-918c-4d84-bee5-7d8391bada86";
+    const region = urlParams.get('region') || "eu-de";
+    const serviceInstanceID = urlParams.get('serviceInstanceID') || "5fca6086-9ac9-4e4f-8d3b-e075e2ee5ee2";
+
+    window.watsonAssistantChatOptions = {
+      showRestartButton: true,
+      integrationID: integrationID, // The ID of this integration.
+      region: region, // The region your integration is hosted in.
+      serviceInstanceID: serviceInstanceID, // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+</html>
